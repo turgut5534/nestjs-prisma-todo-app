@@ -22,7 +22,6 @@ export class TodoService {
   async findTasksofUser(userId: number): Promise<Todo[] | null> {
     return this.prisma.todo.findMany({
       where: { userId },
-      include: { user: true },
     });
   }
 
